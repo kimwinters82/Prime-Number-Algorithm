@@ -7,6 +7,12 @@ class Main {
     System.out.println("Please enter 2nd int: ");
     int start = sc.nextInt();
     int end = sc.nextInt();
+    if (start > end){    
+           int temp = end;
+           end = start;
+           start = temp;  
+        }
+    end+=1;
     boolean[] sieve = new boolean[end];
     for (int i = 0; i<sieve.length; i++){
        if (i != 0 && i != 1){
@@ -29,6 +35,7 @@ class Main {
     for (int i = start; i < sieve.length; i++){
       if (sieve[i] == true){
         count++;
+        
       }
     }
     System.out.println(count);
